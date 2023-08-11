@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+# Criação de contatos
+100.times do
+  Contact.create(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    birth_date: Faker::Date.birthday(min_age: 18, max_age: 65)
+  )
+end
